@@ -1,0 +1,29 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: post-service
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:file:C:\Workspace\h2_db\post_db\db
+    username: post-service
+    password: postservicedb
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+url:
+  like-service: http://like-service/

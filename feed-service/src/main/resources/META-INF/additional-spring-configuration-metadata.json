@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "url.post-service",
+      "type": "java.lang.String",
+      "description": "Description for url.post-service."
+  }
+] }
