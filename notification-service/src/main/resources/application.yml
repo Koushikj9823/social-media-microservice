@@ -1,0 +1,31 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: notification-service
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+message:
+  group:
+    id: group-id
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+mailSender:
+  host: smtp.gmail.com
+  port: 587
+  username: socialmediamcs98@gmail.com
+  password: svogwnxdlcsmjulu
+url:
+  user-service: http://user-service

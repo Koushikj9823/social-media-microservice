@@ -33,6 +33,17 @@ public class UserService {
         userRepository.save(user);
         return user;
     }
+    public User updateUserDetails(User user){
+        Optional<User> user1 = userRepository.findById(user.getUserId());
+        if(user1.isPresent()){
+            user1.get().setFirstName(user.getFirstName());
+            user1.get().setLastName(user.getLastName());
+            user1.get().setEmail(user.getEmail());
+            userRepository.save(user1.get());
+            return user1.get();
+        }
+        else return user;
+    }
     public List<Follow> getAllFollowersByUserId(Integer userId){
         return followRepository.findByUserId(userId);
     }
