@@ -30,7 +30,7 @@ public class UserController {
         return ResponseEntity.ok(userService.postUserDetails(user));
     }
 
-    @GetMapping("/{userId}/followers/")
+    @GetMapping("/{userId}/followers")
     public ResponseEntity<List<Follow>> getAllFollowersForUser(@PathVariable String userId){
         return ResponseEntity.ok(userService.getAllFollowersByUserId(Integer.valueOf(userId)));
     }
@@ -38,5 +38,9 @@ public class UserController {
     @PostMapping("/follow")
     public ResponseEntity<Follow> followTheUser(@RequestBody Follow follow){
         return ResponseEntity.ok(userService.followUser(follow));
+    }
+    @PutMapping("")
+    public ResponseEntity<User> updateUserDetails(@RequestBody User user){
+        return ResponseEntity.ok(userService.updateUserDetails(user));
     }
 }

@@ -1,5 +1,6 @@
 package com.socialmediamicroservice.postservice.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.socialmediamicroservice.postservice.entity.Post;
 import com.socialmediamicroservice.postservice.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class PostController {
     }
 
     @PostMapping(value = "/",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Post> persistPost(@RequestBody Post post){
+    public ResponseEntity<Post> persistPost(@RequestBody Post post) {
         return ResponseEntity.ok(postService.createPost(post));
     }
 
